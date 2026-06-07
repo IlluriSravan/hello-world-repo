@@ -14,7 +14,7 @@ jobs:
     - name: create files
       run: echo "new file created" > text.txt
     - name: upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v7
       with:
         name: my-artifact
         path: text.txt
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v7
         with:
           name: my-artifact
       - name: print downloaded file
