@@ -15,7 +15,7 @@ jobs:
       run: cat "new file created" > text.txt
     - name: upload artifact
       uses: actions/upload-artifact@v3
-      path: text.txt
+      path: .
   next-job:
     name: secondjob
     runs-on: ubuntu-latest
