@@ -12,15 +12,19 @@ jobs:
     - name: lists files
       run: ls -ltr
     - name: create files
-      run: cat "new file created" > text.txt
+      run: echo "new file created" > text.txt
     - name: upload artifact
       uses: actions/upload-artifact@v3
-      path: .
+      with:
+        name: my-artifact
+        path: text.txt
   next-job:
     name: secondjob
     runs-on: ubuntu-latest
     steps:
       - name: download artifact
         uses: actions/download-artifact@v3
+        with:
+          name: my-artifact
       - name: print downloaded file
         run: cat text.txt
